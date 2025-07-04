@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+<!-- 
+  Portions of this codebase are adapted from the [FoG-Mujoco](https://github.com/username/fog-mujoco) project,
+  originally developed by John Doe.
+
+  The original code is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+  You can view the license at: https://creativecommons.org/licenses/by-sa/4.0/
+
+  This project may include modifications to the original work.
+-->
+
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="A Forget-and-Grow Strategy for Deep Reinforcement Learning Scaling in Continuous Control">
+  <meta name="keywords" content="Deep RL, Continuous Control">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>A Forget-and-Grow Strategy for Deep Reinforcement Learning Scaling in Continuous Control</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +42,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -42,85 +52,49 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
-          <div class="is-size-5 publication-authors">
+          <h1 class="title is-2 publication-title">A Forget-and-Grow Strategy for Deep Reinforcement Learning Scaling in Continuous Control</h1>
+          <div class="is-size-5  publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <!-- <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span> -->
+              Zilin Kang<sup>*1,2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              Chenyuan Hu<sup>*3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
+              Yu Luo<sup>4</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
+              Zhecheng Yuan<sup>3,1,5</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
+              Ruijie Zheng<sup>6</sup>
+            </span>
+            <span class="author-block">
+              Huazhe Xu<sup>3,1,5</sup>
             </span>
           </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+          <div class="is-size-6 publication-authors" style="line-height: 1.2;">
+            <span class="author-block"><sup>*</sup>Equal contribution,</span><br>
+            <span class="author-block"><sup>1</sup>Shanghai Qi Zhi Institute,</span><br>
+            <span class="author-block"><sup>2</sup>Department of Computer Science and Technology, Tsinghua University,</span><br>
+            <span class="author-block"><sup>3</sup>Institute for Interdisciplinary Information Sciences, Tsinghua University,</span><br>
+            <span class="author-block"><sup>4</sup>Huawei Noah's Ark Lab,</span><br>
+            <span class="author-block"><sup>5</sup>Shanghai Artificial Intelligence Laboratory,</span><br>
+            <span class="author-block"><sup>6</sup>Computer Science, University of Maryland</span><br>     
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/2507.02712"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -129,7 +103,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/2507.02712"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -138,7 +112,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,10 +120,10 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/nothingbutbut/FoG-deprecated-"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -157,334 +131,206 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" style="color:#d62728;">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
-          </p>
+            Deep reinforcement learning for continuous control has recently achieved impressive progress. 
+
+            However, existing methods often suffer from primacy bias—a tendency to overfit early experiences stored in the replay buffer—which limits an RL agent's sample efficiency and generalizability.
+
+            In contrast, humans are less susceptible to such bias, partly due to <em>infantile amnesia</em>, where the formation of new neurons disrupts early memory traces, leading to the forgetting of initial experiences. 
+            
+            Inspired by this dual processes of forgetting and growing in neuroscience, in this paper, we propose <em>Forget and Grow</em> (<strong>FoG</strong>), a new deep RL algorithm with two mechanisms introduced. 
+            
+            First, <em>Experience Replay Decay (ER Decay)</em>—“forgetting early experience”—which balances memory by gradually reducing the influence of early experiences. 
+            
+            Second, <em>Network Expansion</em>—“growing neural capacity”—which enhances agents' capability to exploit the patterns of existing data by dynamically adding new parameters during training. 
+            
+            Empirical results on four major continuous control benchmarks with more than 40 tasks demonstrate the superior performance of FoG against SoTA existing deep RL algorithms, including BRO, SimBa and TD-MPC2.</p>
+
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
+        <h2 class="title is-3" style="color:#d62728;">Video</h2>
+         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> --> 
     <!--/ Paper video. -->
+    
   </div>
+  
 </section>
 
+<hr style="border: none; border-top: 1px solid #55555555; width: auto; margin: 0.5rem auto;">
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="color:#d62728;">Policy Behavior</h2>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            We visualize the behaviors of FoG in different tasks to show its effectivenenss.
           </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in Mujoco Benchmarks</h3>
           </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+          <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Ant</p>
+              <img src="./static/images/Ant-v4.gif" alt="Ant" style="max-width: 100%;">
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
+  
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">HalfCheetah</p>
+              <img src="./static/images/HalfCheetah-v4.gif" alt="HalfCheetah" style="max-width: 100%;">
+            </div>
+          
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Humanoid</p>
+              <img src="./static/images/Humanoid-v4.gif" alt="Humanoid" style="max-width: 100%;">
+            </div>
+          
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Walker2d</p>
+              <img src="./static/images/Walker2d-v4.gif" alt="Walker2d" style="max-width: 100%;">
+            </div>
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in DM Control Benchmarks</h3>
           </div>
+          <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">DogRun</p>
+              <img src="./static/images/dog-run.gif" alt="DogRun" style="max-width: 100%;">
+            </div>
+  
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">HopperHop</p>
+              <img src="./static/images/hopper-hop.gif" alt="HopperHop" style="max-width: 100%;">
+            </div>
+          
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">HumanoidRun</p>
+              <img src="./static/images/humanoid-run.gif" alt="HumanoidRun" style="max-width: 100%;">
+            </div>
+          
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">HumanoidWalk</p>
+              <img src="./static/images/humanoid-walk.gif" alt="HumanoidWalk" style="max-width: 100%;">
+            </div>
+          </div>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in in Meta-World Benchmarks</h3>
+          </div>
+          <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Assembly</p>
+              <img src="./static/images/assembly.gif" alt="Assembly" style="max-width: 100%;">
+            </div>
+  
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Coffee Pull</p>
+              <img src="./static/images/coffee-pull.gif" alt="Coffee Pull" style="max-width: 100%;">
+            </div>
+          
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Pick Place</p>
+              <img src="./static/images/pick-place.gif" alt="Pick Place" style="max-width: 100%;">
+            </div>
+          
+            <div class="column is-one-quarter has-text-centered">
+              <p class="subtitle is-5">Push Back</p>
+              <img src="./static/images/push-back.gif" alt="Push Back" style="max-width: 100%;">
+            </div>
+          </div>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in HumanoidBench Benchmarks</h3>
         </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
+        
       </div>
     </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
 
+<hr style="border: none; border-top: 1px solid #55555555; width: auto; margin: 0.5rem auto;">
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="color:#d62728;">Benchmark Results</h2>
+        <div class="content has-text-justified">
+          <p>To evaluate the performance of <strong>FoG</strong>, we collect in total <strong>41</strong> tasks from <strong>4</strong> domains: 
+            <span style="color: #d62728;">Mujoco</span>, <span style="color: #d62728;">DMControl</span>, <span style="color: #d62728;">Meta-World</span>, and <span style="color: #d62728;">HumanoidBench</span>, 
+          covering a wide range of challenges, including high-dimensional states and actions, sparse rewards, multi-object and delicate manipulation, and complex locomotion.
+          </p>          
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in Mujoco Benchmarks</h3>
+          </div>
+          <p>We evaluate FoG on 4 continuous control tasks in Mujoco suite.</p>
+          <br>
+          <div class="columns is-centered">
+            <img src="./static/images/mujoco_res.png" alt="Mujoco Benchmarks" class="benchmark-image">
+          </div>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in DM Control Benchmarks</h3>
+          </div>
+          <p>We evaluate FoG on 13 continuous control tasks in DM Control suite.</p>
+          <br>
+          <div class="columns is-centered">
+            <img src="./static/images/dmcall_res.png" alt="DM Control Benchmarks" class="benchmark-image">
+          </div>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in in Meta-World Benchmarks</h3>
+          </div>
+          <p>We evaluate FoG on 10 continuous control tasks in Meta-World suite.</p>
+          <br>
+          <div class="columns is-centered">
+            <img src="./static/images/mw_res.png" alt="Meta-World Benchmarks" class="benchmark-image">
+          </div>
+          <br>
+          <div class="columns is-centered">
+            <h3 class="title is-4" style="color: #1f77b4; font-weight: 400;">FoG in HumanoidBench Benchmarks</h3>
+          </div>
+          <p>We evaluate FoG on 14 continuous control tasks in HumanoidBench suite.</p>
+          <br>
+          <div class="columns is-centered">
+            <img src="./static/images/hb_res.png" alt="HumanoidBench Benchmarks" class="benchmark-image">
+          </div>
       </div>
     </div>
   </div>
-</footer>
+</section>
+
 
 </body>
 </html>
